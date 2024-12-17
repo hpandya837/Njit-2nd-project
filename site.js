@@ -40,9 +40,62 @@ const vue_app = Vue.createApp({
          
       }
     },
-      methods: {
-            /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
+    methods: {
+      /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
+      getMonthText: function (dateArray) {
+        const year = dateArray[0]
+        const day = dateArray[2]
+        let monthText = " ";
+        switch (dateArray[1]) {
+          case 1:
+            monthText = "January";
+            break;
+          case 2:
+            monthText = "February";
+            break;
+          case 3:
+            monthText = "March";
+            break;
+          case 4:
+            monthText = "April";
+            break;
+          case 5:
+            monthText = "May";
+            break;
+          case 6:
+            monthText = "June";
+            break;
+          case 7:
+            monthText = "July";
+            break;
+          case 8:
+            monthText = "August";
+            break;
+          case 9:
+            monthText = "September";
+            break;
+          case 10:
+            monthText = "October";
+            break;
+          case 11:
+            monthText = "November";
+            break;
+            case 12:
+            monthText = "December";
+            break;
+          default:
+            monthText = "Invalid";
+        }
+        return `${monthText} ${day}, ${year}`;
+      },
+
+      getPosterIndex: function(currentIndex,posters){
+        return (currentIndex % posters.lenght) +1;
       }
-})
+      
+  
+    },
+  });
+  
 
 vue_app.mount("#vue_app")
